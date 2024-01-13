@@ -1,31 +1,49 @@
+from .utils import check_authentication_api, code_generator
 from django.shortcuts import render
-
-import requests
+from django.http import HttpResponseNotFound
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .models import Referral
 from .serializers import ReferralSerializer
+import logging
 
-
-async def check_authentication_api(token, phone_number):
-    api_endpoint = 'https://api.mafia.jamshid.app/auth/check-token'
-    headers = {'Authorization': f'Bearer {token}'}
-    response = requests.post(api_endpoint, headers=headers)
-    response_json = response.json()
-    if response_json["status"] == 200 or response_json["status"] == 201:
-        return True
-    elif response_json["status"] == 500:
-        return False
+logger = logging.getLogger(__name__)
 
 
 class SendReferralCode(APIView):
+
+    def get(self, request):
+        return HttpResponseNotFound()
+
     def post(self, request, format=None):
-        referral = Referral.objects.create()
-        headers = request.META
-        print(headers)
-        serializer = ReferralSerializer(referral)
+        TOKEN = request.headers.get('token')
+        if not TOKEN:
+            return Response(status=status.HTTP_403_FORBIDDEN)
+        # authentication_api = check_authentication_api(request, TOKEN)
+        if True:
+            referral = Referral.objects.filter(used=False).order_by('?').first()
+            # referral = Referral.objects.create(code=code_generator().upper())
+            serializer = ReferralSerializer(referral)
+            logger.debug('Info message')
+
+            return Response(serializer.data['code'], status=status.HTTP_202_ACCEPTED)
+        else:
+            return Response(status=status.HTTP_401_UNAUTHORIZED)
 
         # check_authentication_api()
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
+    # def post(self, request, format=None):
+    #     TOKEN = request.headers.get('token')
+    #     if not TOKEN:
+    #         return Response(status=status.HTTP_403_FORBIDDEN)
+    #     # authentication_api = check_authentication_api(request, TOKEN)
+    #     if True:
+    #         # referral = Referral.objects.filter(used=False).order_by('?').first()
+    #         # print(str(referral.code))
+    #         referral = Referral.objects.create(code=code_generator().upper())
+    #         serializer = ReferralSerializer(referral)
+    #
+    #         return Response(serializer.data['code'], status=status.HTTP_202_ACCEPTED),  # serializer.data['code'],
+    #     else:
+    #         return Response(status=status.HTTP_401_UNAUTHORIZED)

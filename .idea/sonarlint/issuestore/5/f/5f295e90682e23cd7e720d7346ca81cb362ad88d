@@ -1,2 +1,5 @@
 
-Xpython:S1172"4Remove the unused function parameter "phone_number".(…–ú¥þÿÿÿÿ8‹‚Ô´Ï1
+gpython:S5797"HReplace this expression; used as a condition it will always be constant.(¦‹Å÷8ßÎ¨ûÏ1
+Bpython:S125"Remove this commented out code.(“ž‹‹þÿÿÿÿ8ßÎ¨ûÏ1
+Bpython:S125"Remove this commented out code.(ã£Ò»þÿÿÿÿ8ÒùÙûÏ1
+<python:S125$"Remove this commented out code.( Ý÷}8Õ¦ÙûÏ1
