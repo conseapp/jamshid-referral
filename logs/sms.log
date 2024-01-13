@@ -1,0 +1,62 @@
+2024-01-14 00:05:18,699 - smslogger - ERROR - API Exception occurred: APIException[400] پارامترها ناقص هستند
+Traceback (most recent call last):
+  File "C:\Users\armii\PycharmProjects\djangoJamshid\referral\smsApi.py", line 15, in sent_sms
+    print(api.sms_status())
+          ^^^^^^^^^^^^^^^^
+  File "C:\Users\armii\PycharmProjects\djangoJamshid\venv\Lib\site-packages\kavenegar.py", line 54, in sms_status
+    return self._request('sms', 'status',params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\armii\PycharmProjects\djangoJamshid\venv\Lib\site-packages\kavenegar.py", line 40, in _request
+    raise APIException((u'APIException[%s] %s' % (response['return']['status'],response['return']['message'])).encode('utf-8'))
+kavenegar.APIException: b'APIException[400] \xd9\xbe\xd8\xa7\xd8\xb1\xd8\xa7\xd9\x85\xd8\xaa\xd8\xb1\xd9\x87\xd8\xa7 \xd9\x86\xd8\xa7\xd9\x82\xd8\xb5 \xd9\x87\xd8\xb3\xd8\xaa\xd9\x86\xd8\xaf'
+2024-01-14 00:06:49,752 - smslogger - ERROR - API Exception occurred: APIException[400] پارامترها ناقص هستند
+Traceback (most recent call last):
+  File "C:\Users\armii\PycharmProjects\djangoJamshid\referral\smsApi.py", line 15, in sent_sms
+    print(api.sms_status())
+          ^^^^^^^^^^^^^^^^
+  File "C:\Users\armii\PycharmProjects\djangoJamshid\venv\Lib\site-packages\kavenegar.py", line 54, in sms_status
+    return self._request('sms', 'status',params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\armii\PycharmProjects\djangoJamshid\venv\Lib\site-packages\kavenegar.py", line 40, in _request
+    raise APIException((u'APIException[%s] %s' % (response['return']['status'],response['return']['message'])).encode('utf-8'))
+kavenegar.APIException: b'APIException[400] \xd9\xbe\xd8\xa7\xd8\xb1\xd8\xa7\xd9\x85\xd8\xaa\xd8\xb1\xd9\x87\xd8\xa7 \xd9\x86\xd8\xa7\xd9\x82\xd8\xb5 \xd9\x87\xd8\xb3\xd8\xaa\xd9\x86\xd8\xaf'
+2024-01-14 00:08:00,282 - smslogger - ERROR - API Exception occurred: APIException[400] پارامترها ناقص هستند
+Traceback (most recent call last):
+  File "C:\Users\armii\PycharmProjects\djangoJamshid\referral\smsApi.py", line 15, in sent_sms
+    print(api.sms_status())
+          ^^^^^^^^^^^^^^^^
+  File "C:\Users\armii\PycharmProjects\djangoJamshid\venv\Lib\site-packages\kavenegar.py", line 54, in sms_status
+    return self._request('sms', 'status',params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\armii\PycharmProjects\djangoJamshid\venv\Lib\site-packages\kavenegar.py", line 40, in _request
+    raise APIException((u'APIException[%s] %s' % (response['return']['status'],response['return']['message'])).encode('utf-8'))
+kavenegar.APIException: b'APIException[400] \xd9\xbe\xd8\xa7\xd8\xb1\xd8\xa7\xd9\x85\xd8\xaa\xd8\xb1\xd9\x87\xd8\xa7 \xd9\x86\xd8\xa7\xd9\x82\xd8\xb5 \xd9\x87\xd8\xb3\xd8\xaa\xd9\x86\xd8\xaf'
+2024-01-14 00:08:08,798 - smslogger - INFO - message <hello, world!> sent to 09361243339
+2024-01-14 00:09:37,416 - smslogger - ERROR - API Exception occurred: APIException[412] ارسال کننده نامعتبر است
+Traceback (most recent call last):
+  File "C:\Users\armii\PycharmProjects\djangoJamshid\referral\smsApi.py", line 14, in sent_sms
+    response = api.sms_send(params)
+               ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\armii\PycharmProjects\djangoJamshid\venv\Lib\site-packages\kavenegar.py", line 48, in sms_send
+    return self._request('sms', 'send',params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\armii\PycharmProjects\djangoJamshid\venv\Lib\site-packages\kavenegar.py", line 40, in _request
+    raise APIException((u'APIException[%s] %s' % (response['return']['status'],response['return']['message'])).encode('utf-8'))
+kavenegar.APIException: b'APIException[412] \xd8\xa7\xd8\xb1\xd8\xb3\xd8\xa7\xd9\x84 \xda\xa9\xd9\x86\xd9\x86\xd8\xaf\xd9\x87 \xd9\x86\xd8\xa7\xd9\x85\xd8\xb9\xd8\xaa\xd8\xa8\xd8\xb1 \xd8\xa7\xd8\xb3\xd8\xaa'
+2024-01-14 00:10:36,939 - smslogger - ERROR - API Exception occurred: APIException[412] ارسال کننده نامعتبر است
+Traceback (most recent call last):
+  File "C:\Users\armii\PycharmProjects\djangoJamshid\referral\smsApi.py", line 14, in sent_sms
+    response = api.sms_send(params)
+               ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\armii\PycharmProjects\djangoJamshid\venv\Lib\site-packages\kavenegar.py", line 48, in sms_send
+    return self._request('sms', 'send',params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\armii\PycharmProjects\djangoJamshid\venv\Lib\site-packages\kavenegar.py", line 40, in _request
+    raise APIException((u'APIException[%s] %s' % (response['return']['status'],response['return']['message'])).encode('utf-8'))
+kavenegar.APIException: b'APIException[412] \xd8\xa7\xd8\xb1\xd8\xb3\xd8\xa7\xd9\x84 \xda\xa9\xd9\x86\xd9\x86\xd8\xaf\xd9\x87 \xd9\x86\xd8\xa7\xd9\x85\xd8\xb9\xd8\xaa\xd8\xa8\xd8\xb1 \xd8\xa7\xd8\xb3\xd8\xaa'
+2024-01-14 00:24:56,687 - smslogger - INFO - message {message} sent to {receptor}
+2024-01-14 00:24:56,687 - smslogger - INFO - message {message} sent to {receptor}
+2024-01-14 00:25:38,844 - smslogger - INFO - message <hello, world!> sent to 09361243339
+2024-01-14 00:25:38,844 - smslogger - INFO - message <hello, world!> sent to 09361243339
+2024-01-14 00:27:42,044 - smslogger - INFO - message <hello, world!> sent to 09361243339
+2024-01-14 00:43:06,506 - smslogger - INFO - message <hello, world!> sent to 09361243339
