@@ -3,3 +3,5 @@ venv
 logs
 db.sqlite3
 .idea
+.env
+.vscode

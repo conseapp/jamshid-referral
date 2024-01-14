@@ -17,7 +17,7 @@ class SendReferralCode(APIView):
     def post(self, request, format=None):
         TOKEN = request.headers.get('token')
         USER = request.headers.get('user')
-        pattern = r'^Bearer\s([a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+)$'
+        pattern = r'^[B,b]earer\s([a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+)$'
         if not TOKEN or not USER:
             return Response(status=status.HTTP_403_FORBIDDEN)
         elif not re.match(pattern, TOKEN):

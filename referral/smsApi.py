@@ -1,10 +1,15 @@
 from referral.loggers.loggers import SmsLogger
 import requests
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 
 def sent_sms(receptor: str, message: str):
     try:
-        TOKEN = '4E4E7566354D53344544343456785A6F5562452F69506E4A6E4A63636E62354D6242664A4846374F6958383D'
+        TOKEN = os.environ.get("SMS_TOKEN")
         TEMPLATE = 'otp'
         response = requests.get(
             f'http://api.kavenegar.com/v1/{TOKEN}/verify/lookup.json?receptor={receptor}&token={message}&template={TEMPLATE}')
