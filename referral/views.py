@@ -16,8 +16,9 @@ class SendReferralCode(APIView):
 
     def post(self, request, format=None):
         TOKEN = request.headers.get('token')
+        USER = request.headers.get('user')
         pattern = r'^Bearer\s([a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+)$'
-        if not TOKEN:
+        if not TOKEN or not USER:
             return Response(status=status.HTTP_403_FORBIDDEN)
         elif not re.match(pattern, TOKEN):
             return Response(status=status.HTTP_400_BAD_REQUEST)
@@ -26,11 +27,11 @@ class SendReferralCode(APIView):
             referral = Referral.objects.filter(used=False).order_by('?').first()
             # referral = Referral.objects.create(code=code_generator().upper())
             serializer = ReferralSerializer(referral)
-            result = sent_sms('0936123339', serializer.data['code'])
+            result = sent_sms(USER, serializer.data['code'])
             if result:
                 referral.used = True
                 referral.save()
-                return Response(f'message sent to {__name__}', status=status.HTTP_200_OK)
+                return Response(f'message sent to {USER}', status=status.HTTP_200_OK)
             else:
                 return Response('failed to sent message', status=status.HTTP_400_BAD_REQUEST)
         else:

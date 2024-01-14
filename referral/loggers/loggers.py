@@ -2,7 +2,7 @@ import logging
 from djangoJamshid.settings import BASE_DIR
 from abc import ABC, abstractmethod
 
-logging.basicConfig(level=logging.DEBUG,
+logging.basicConfig(level=logging.INFO,
                     filemode='a',
                     format="%(asctime)s - %(levelname)s - %(message)s",
                     encoding='utf-8')

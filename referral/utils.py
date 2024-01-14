@@ -1,5 +1,5 @@
 from django.utils import timezone
-from loggers.loggers import AuthenticationApiLogger
+from referral.loggers.loggers import AuthenticationApiLogger
 from .models import Referral
 import random
 import string
@@ -15,12 +15,14 @@ def check_authentication_api(request, token):
         response = requests.post(api_endpoint, headers=headers)
         response_json = response.json()
         if response_json["status"] == 200 or response_json["status"] == 201:
+            AuthenticationApiLogger.info(f'successfully authenticated request for user {request.headers.get("user")}')
             return True
         elif response_json["status"] == 500:
-            AuthenticationApiLogger.warning("Unauthorized access to api.mafia.jamshid.app/auth/check-token")
+            AuthenticationApiLogger.warning(
+                'Unauthorized access to api.mafia.jamshid.app/auth/check-token for user {request.headers.get("user")}')
             return False
     except Exception as err:
-        AuthenticationApiLogger.exception("Exception occurred")
+        AuthenticationApiLogger.exception(f"Exception occurred: {err}")
         return False
 
 
