@@ -148,9 +148,9 @@ CORS_ALLOW_HEADERS = ['*']
 
 CORS_ALLOW_METHODS = ['*']
 
-CORS_ALLOW_CREDENTIALS = True
+#CORS_ALLOW_CREDENTIALS = True
 
-ALLOWED_HOSTS = ['http://localhost', 'http://localhost:5173', 'https://jamshid.app']
+ALLOWED_HOSTS = ['http://localhost', 'http://localhost:5173', 'https://jamshid.app', 'localhost']
 
 CORS_ORIGIN_ALLOW_ALL = False
 

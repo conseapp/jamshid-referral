@@ -12,7 +12,7 @@ class ReferralAdmin(ImportExportModelAdmin):
     list_display = ['id', 'code', 'generated_date', 'inserted_date', 'expired_date', 'used']
     ordering = ['inserted_date']
     form = ReferralForm
-    readonly_fields = ['code']
+    readonly_fields = ['code', 'sent_to', 'used', 'inserted_date']
 
     def save_model(self, request, obj, form, change):
         obj.code = code_generator()
