@@ -144,20 +144,22 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CORS CONFIG
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost",
-    "http://localhost:5173",
-    "https://jamshid.app"
-]
+CORS_ALLOW_HEADERS = ['*']
 
-CORS_ALLOW_HEADERS = [
-    'access-control-allow-credentials',
-    'access-control-allow-headers',
-    'access-control-allow-methods',
-    'access-control-allow-origin',
-    'authorization',
-]
+CORS_ALLOW_METHODS = ['*']
 
+CORS_ALLOW_CREDENTIALS = True
+
+ALLOWED_HOSTS = ['http://localhost', 'http://localhost:5173', 'https://jamshid.app']
+
+CORS_ORIGIN_ALLOW_ALL = False
+
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost',
+    'http://localhost:5173',
+    'https://jamshid.app'
+
+)
 # CSRF CONFIG
 
 CSRF_TRUSTED_ORIGINS = [

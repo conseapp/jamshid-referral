@@ -9,6 +9,7 @@ class Referral(models.Model):
     inserted_date = models.DateTimeField(auto_now_add=True)
     code = models.CharField(max_length=8, editable=False, unique=True)
     used = models.BooleanField(default=False)
+    sent_to = models.CharField(max_length=11, null=True, blank=True)
 
     def get_expired_date(self):
         if self.generated_date:

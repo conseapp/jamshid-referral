@@ -30,6 +30,7 @@ class SendReferralCode(APIView):
             result = sent_sms(USER, serializer.data['code'])
             if result:
                 referral.used = True
+                referral.sent_to = USER
                 referral.save()
                 return Response(f'message sent to {USER}', status=status.HTTP_200_OK)
             else:
