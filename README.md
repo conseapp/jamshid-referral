@@ -95,4 +95,4 @@ python2 manage.py createsuperuser
 python manage.py runserver
 ```
 
-Developer By Hexoder
+Developed By Hexoder
