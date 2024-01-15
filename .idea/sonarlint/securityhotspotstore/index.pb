@@ -27,9 +27,6 @@ B
 referral/signal.py,c\7\c74add64a3787e1e99149f69b688357d444877a5
 @
 referral/apps.py,9\9\99f16e8d2dd74a28d0a3120864227b09edfbd34c
-:
-
-django.log,e\d\ed11693f71ee84a5bb00b1ab7f872f645391c1a1
 ]
 -.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
 S
@@ -70,8 +67,6 @@ L
 referral/loggers/__init__.py,4\c\4c6c2d5d7186b1b1521359198edef2fe3a0cd8d4
 K
 referral/loggers/loggers.py,a\6\a6a52b5fabfed5a6199506971b555e0fa0369370
-C
-referral/loggers.py,0\9\096edd8b46aa7030df7d41a1ac57ffe78fd04b74
 K
 logs/authentication_api.log,8\3\83e52dba33bfba194fe07e1611f7d69c264360cc
 ?
