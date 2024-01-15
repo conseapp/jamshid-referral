@@ -158,6 +158,12 @@ CORS_ALLOW_HEADERS = [
     'authorization',
 ]
 
+# CSRF CONFIG
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://offcode.api.jamshid.app'
+]
+
 # LOGGING
 
 LOGGING = {

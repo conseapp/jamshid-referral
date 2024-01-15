@@ -7,4 +7,4 @@ from .models import Referral
 class ReferralResource(resources.ModelResource):
     class Meta:
         model = Referral
-        fields = ('generated_date', 'code')
+        fields = ('id', 'generated_date', 'code')
